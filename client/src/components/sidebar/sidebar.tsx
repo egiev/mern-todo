@@ -21,7 +21,7 @@ export const Sidebar: FC = (): ReactElement => {
         flexDirection: 'column',
       }}
     >
-      <Profile />
+      <Profile name="Egie" />
     </Grid>
   );
 };
