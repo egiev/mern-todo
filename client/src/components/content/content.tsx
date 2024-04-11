@@ -1,5 +1,4 @@
 import { FC, ReactElement } from 'react';
-
 import { Grid } from '@mui/material';
 
 export const Content: FC = (): ReactElement => {

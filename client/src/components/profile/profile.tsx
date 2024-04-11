@@ -1,5 +1,4 @@
 import { FC, ReactElement } from 'react';
-
 import { Avatar, Box, Typography } from '@mui/material';
 
 interface IProfile {
