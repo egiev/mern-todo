@@ -2,6 +2,9 @@ import { FC, ReactElement } from 'react';
 import { Grid, Box } from '@mui/material';
 import dayjs from 'dayjs';
 
+import { TaskCounter } from '../task-counter/task-counter';
+import { Status } from '../task-form/enums/status.enum';
+
 export const Content: FC = (): ReactElement => {
   return (
     <Grid item md={8} px={4}>
@@ -20,9 +23,9 @@ export const Content: FC = (): ReactElement => {
           xs={12}
           mb={8}
         >
-          <Box>Counter</Box>
-          <Box>Counter</Box>
-          <Box>Counter</Box>
+          <TaskCounter count={10} status={Status.todo} />
+          <TaskCounter count={10} status={Status.inProgress} />
+          <TaskCounter count={10} status={Status.completed} />
         </Grid>
 
         <Grid item display="flex" flexDirection="column" md={8} xs={10}>
