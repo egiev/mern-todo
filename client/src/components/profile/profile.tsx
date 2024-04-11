@@ -1,9 +1,7 @@
 import { FC, ReactElement } from 'react';
 import { Avatar, Box, Typography } from '@mui/material';
 
-interface IProfile {
-  name?: string;
-}
+import { IProfile } from './interfaces/profile.interface';
 
 export const Profile: FC<IProfile> = (props): ReactElement => {
   const { name = 'User' } = props;

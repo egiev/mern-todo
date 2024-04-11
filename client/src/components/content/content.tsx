@@ -2,6 +2,7 @@ import { FC, ReactElement } from 'react';
 import { Grid, Box } from '@mui/material';
 import dayjs from 'dayjs';
 
+import { Task } from '../task/task';
 import { TaskCounter } from '../task-counter/task-counter';
 import { Status } from '../task-form/enums/status.enum';
 
@@ -29,9 +30,9 @@ export const Content: FC = (): ReactElement => {
         </Grid>
 
         <Grid item display="flex" flexDirection="column" md={8} xs={10}>
-          <Box>Counter</Box>
-          <Box>Counter</Box>
-          <Box>Counter</Box>
+          <Task />
+          <Task />
+          <Task />
         </Grid>
       </Grid>
     </Grid>
