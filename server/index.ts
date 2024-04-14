@@ -1,4 +1,4 @@
-import express, { Express, Request, Response } from 'express';
+import express, { Express, Response } from 'express';
 import dotenv from 'dotenv';
 
 const app: Express = express();
@@ -6,8 +6,7 @@ dotenv.config();
 
 const port = process.env.PORT;
 
-app.get('/', (request: Request, response: Response) => {
-  console.log(request);
+app.get('/', (_, response: Response) => {
   response.send('Hello world');
 });
 
