@@ -16,7 +16,6 @@ export const Task: FC<ITask> = (props): ReactElement => {
     date = new Date(),
     description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     priority = Priority.normal,
-    status = Status.completed,
     checked = false,
     onChange = (e) => console.log(e),
     onClick = (e) => console.log(e),

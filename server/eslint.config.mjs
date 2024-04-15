@@ -11,7 +11,9 @@ export default [
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
-
+  {
+    files: ['**/*.ts', '**/*.tsx'],
+  },
   {
     plugins: {
       ['@typescript-eslint']: tseslint.plugin,

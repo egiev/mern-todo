@@ -18,6 +18,5 @@ AppDataSource.initialize()
     app.listen(port);
   })
   .catch((error) => {
-    console.log(error);
-    console.log('Cannot connect to the data source');
+    throw new Error(error);
   });

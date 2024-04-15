@@ -1,9 +1,6 @@
 import { DataSource } from 'typeorm';
 import { Task } from '../src/tasks/tasks.entity';
 
-console.log(process.env.PG_USER);
-console.log(process.env.PG_PASSWORD);
-
 export const AppDataSource: DataSource = new DataSource({
   type: 'postgres',
   host: process.env.PG_HOST,
