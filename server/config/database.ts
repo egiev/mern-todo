@@ -1,4 +1,5 @@
 import { DataSource } from 'typeorm';
+import { Task } from '../src/tasks/tasks.entity';
 
 console.log(process.env.PG_USER);
 console.log(process.env.PG_PASSWORD);
@@ -12,4 +13,5 @@ export const AppDataSource: DataSource = new DataSource({
   database: process.env.PG_DB,
   // For production set synchronize to false and create a migration file
   synchronize: true,
+  entities: [Task],
 });
