@@ -5,7 +5,7 @@ import { Status } from '../enums/status.enum';
 
 @Entity()
 export class Task {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column({ type: 'text' })

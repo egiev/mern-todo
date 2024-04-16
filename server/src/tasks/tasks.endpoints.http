@@ -1,3 +1,4 @@
+@id = 7b532ce7-ad78-4fb1-bd90-224a76ebd586
 ### Fetch all tasks
 
 GET http://localhost:3200/tasks
@@ -15,3 +16,18 @@ Content-Type: application/json
   "priority": "normal",
   "status": "todo"
 }
+
+### Update task
+
+PUT http://localhost:3200/tasks/{{id}}
+Content-Type: application/json
+
+{
+  "description": "Test",
+  "status": "inProgress"
+}
+
+### Delete task
+
+DELETE http://localhost:3200/tasks/{{id}}
+Content-Type: application/json
