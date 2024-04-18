@@ -2,15 +2,15 @@ import { Priority } from '../enums/priority.enum';
 
 export const PRIORITY_SELECT_OPTIONS = [
   {
-    label: Priority.high,
-    value: Priority.high.toUpperCase(),
+    label: Priority.high.toUpperCase(),
+    value: Priority.high,
   },
   {
-    label: Priority.normal,
-    value: Priority.normal.toUpperCase(),
+    label: Priority.normal.toUpperCase(),
+    value: Priority.normal,
   },
   {
-    label: Priority.low,
-    value: Priority.low.toUpperCase(),
+    label: Priority.low.toUpperCase(),
+    value: Priority.low,
   },
 ];

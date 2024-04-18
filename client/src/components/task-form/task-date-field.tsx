@@ -1,24 +1,23 @@
 import { FC, ReactElement } from 'react';
 import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import dayjs, { Dayjs } from 'dayjs';
 import PropTypes from 'prop-types';
 
 import { IDateField } from './interfaces/date-field.interface';
 
 export const TaskDateField: FC<IDateField> = (props): ReactElement => {
   const {
-    value = dayjs(),
-    onChange = (e) => console.log(e),
+    value = new Date(),
+    onChange = (e) => console.log('lala', e),
     disabled = false,
   } = props;
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
       <DesktopDatePicker
         label="Task Date"
-        format="DD/MM/YYYY"
+        format="dd/MM/yyyy"
         value={value}
         onChange={onChange}
         disabled={disabled}
@@ -28,7 +27,7 @@ export const TaskDateField: FC<IDateField> = (props): ReactElement => {
 };
 
 TaskDateField.propTypes = {
-  value: PropTypes.instanceOf(Dayjs),
+  value: PropTypes.instanceOf(Date),
   onChange: PropTypes.func,
   disabled: PropTypes.bool,
 };
