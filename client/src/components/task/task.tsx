@@ -12,11 +12,12 @@ import { getTaskBorderColor } from './helpers/task-border-color';
 
 export const Task: FC<ITask> = (props): ReactElement => {
   const {
+    id,
     title = 'Test Title',
     date = new Date(),
     description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    status = Status.todo,
     priority = Priority.normal,
-    checked = false,
     onChange = (e) => console.log(e),
     onClick = (e) => console.log(e),
   } = props;
@@ -38,7 +39,12 @@ export const Task: FC<ITask> = (props): ReactElement => {
     >
       <TaskHeader title={title} date={date} />
       <TaskDescription description={description} />
-      <TaskFooter checked={checked} onChange={onChange} onClick={onClick} />
+      <TaskFooter
+        id={id}
+        status={status}
+        onChange={onChange}
+        onClick={onClick}
+      />
     </Box>
   );
 };

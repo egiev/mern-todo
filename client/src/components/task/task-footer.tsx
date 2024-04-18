@@ -3,10 +3,12 @@ import { Box, Button, FormControlLabel, Switch } from '@mui/material';
 import PropTypes from 'prop-types';
 
 import { ITaskFooter } from './interfaces/task-footer.interface';
+import { Status } from '../task-form/enums/status.enum';
 
 export const TaskFooter: FC<ITaskFooter> = (props): ReactElement => {
   const {
-    checked = false,
+    // id,
+    status = Status.todo,
     onChange = (e) => console.log(e),
     onClick = (e) => console.log(e),
   } = props;
@@ -17,7 +19,7 @@ export const TaskFooter: FC<ITaskFooter> = (props): ReactElement => {
         label="In Progress"
         control={
           <Switch
-            checked={checked}
+            checked={status === 'inProgress' ? true : false}
             onChange={onChange}
             inputProps={{ 'aria-label': 'controlled' }}
           />
@@ -38,7 +40,8 @@ export const TaskFooter: FC<ITaskFooter> = (props): ReactElement => {
 };
 
 TaskFooter.propTypes = {
-  checked: PropTypes.bool,
+  id: PropTypes.string.isRequired,
+  status: PropTypes.oneOf(Object.values(Status)),
   onChange: PropTypes.func,
   onClick: PropTypes.func,
 };
