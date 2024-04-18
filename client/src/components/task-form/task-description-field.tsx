@@ -5,7 +5,11 @@ import PropTypes from 'prop-types';
 import { ITextField } from './interfaces/text-field.interface';
 
 export const TaskDescriptionField: FC<ITextField> = (props): ReactElement => {
-  const { disabled = false, onChange = (e) => console.log(e) } = props;
+  const {
+    value = '',
+    disabled = false,
+    onChange = (e) => console.log(e),
+  } = props;
 
   return (
     <TextField
@@ -18,8 +22,9 @@ export const TaskDescriptionField: FC<ITextField> = (props): ReactElement => {
       rows={4}
       multiline
       fullWidth
-      disabled={disabled}
+      value={value}
       onChange={onChange}
+      disabled={disabled}
     />
   );
 };

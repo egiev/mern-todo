@@ -31,5 +31,7 @@ export async function sendAPIRequest<T>(
 ): Promise<T> {
   const response = await axios({ url, ...getCorrectRequest(method, data) });
 
+  // TODO: catch error for api request and throw error
+
   return response.data as Promise<T>;
 }
