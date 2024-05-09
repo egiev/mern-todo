@@ -13,7 +13,7 @@ Content-Type: application/json
   "title": "Hello",
   "date": "2024-04-15T05:59:06.121Z",
   "description": "Lorem ipsum",
-  "priority": "normal",
+  "priority": "high",
   "status": "todo"
 }
 
