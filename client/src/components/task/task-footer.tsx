@@ -7,7 +7,7 @@ import { Status } from '../task-form/enums/status.enum';
 
 export const TaskFooter: FC<ITaskFooter> = (props): ReactElement => {
   const {
-    // id,
+    id,
     status = Status.todo,
     onChange = (e) => console.log(e),
     onClick = (e) => console.log(e),
@@ -19,9 +19,8 @@ export const TaskFooter: FC<ITaskFooter> = (props): ReactElement => {
         label="In Progress"
         control={
           <Switch
-            checked={status === 'inProgress' ? true : false}
-            onChange={onChange}
-            inputProps={{ 'aria-label': 'controlled' }}
+            onChange={(e) => onChange(e, id)}
+            defaultChecked={status === Status.inProgress}
           />
         }
       />
@@ -31,7 +30,7 @@ export const TaskFooter: FC<ITaskFooter> = (props): ReactElement => {
         color="success"
         size="small"
         sx={{ color: '#ffffff' }}
-        onClick={onClick}
+        onClick={(e) => onClick(e, id)}
       >
         Mark Complete
       </Button>
